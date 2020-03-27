@@ -14,3 +14,12 @@ body {
   color: #fff;
   background-color: #000;
 }
+
+.register-text {
+  display: inline;
+  padding-right: 10px;
+}
+
+.login-button {
+  margin-right: 275px;
+}
