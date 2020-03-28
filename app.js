@@ -37,26 +37,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/userDB", 
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
-  email: {
-    String,
-    unique: false
-  },
-  password: {
-    String,
-    unique: false
-  },
-  googleId: {
-    String,
-    unique: false
-  },
-  facebookId: {
-    String,
-    unique: false
-  },
-  secret: {
-    String,
-    unique: false
-  },
+  email: String,
+  password: String,
+  googleId: String,
+  facebookId: String,
+  secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -181,7 +166,7 @@ app.post("/register", (req, res) => {
       console.log(err);
       res.redirect("/register");
     } else {
-      passport.authenticate("local") (req, res, () => {
+      passport.authenticate("local", {failureRedirect: '/login'}) (req, res, () => {
         res.redirect("/secrets");
       });
     }
