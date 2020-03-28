@@ -37,11 +37,26 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/userDB", 
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  googleId: String,
-  facebookId: String,
-  secret: String
+  email: {
+    String,
+    unique: false
+  },
+  password: {
+    String,
+    unique: false
+  },
+  googleId: {
+    String,
+    unique: false
+  },
+  facebookId: {
+    String,
+    unique: false
+  },
+  secret: {
+    String,
+    unique: false
+  },
 });
 
 userSchema.plugin(passportLocalMongoose);
