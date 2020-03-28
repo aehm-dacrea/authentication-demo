@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema({
   secret: String
 });
 
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose, {usernameUnique: false});
 userSchema.plugin(findOrCreate);
 
 const User = mongoose.model("User", userSchema);
