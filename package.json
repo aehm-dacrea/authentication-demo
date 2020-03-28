@@ -27,6 +27,6 @@
     "passport-local-mongoose": "^5.0.1"
   },
   "engines": {
-    "node": "10.x"
+    "node": "10.16.2"
   }
 }
