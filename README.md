@@ -9,4 +9,5 @@ authentication. I've implemented also Google and Facebook authentication,
 and cookies storing.
 
 As my knowledge of Docker is very basic, currently I am not able to containerize
-MongoDB, so the only way to run this demo is deploy in on Heroku.
+MongoDB, so the only way to run this demo is deploy it on Heroku.
+Here is link provided: https://authentication-demo-v1.herokuapp.com/
